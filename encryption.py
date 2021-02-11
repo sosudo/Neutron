@@ -85,7 +85,7 @@ alphanum = {
      ",":58,
      "<":55
 }
-def encrypt(string:str) -> str:
+def Encrypt(string:str) -> str:
       encrypted_string = string
       while encrypted_string==string:
             shift_value = random.randint(-1000,1000)

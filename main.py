@@ -16,13 +16,13 @@ def init():
           println(SK)
      elif SK == "2":
           println(SK)
-          ok = input("Neutron > OK (h for help): ")
-          if ok == "h":
+          OK = input("Neutron > OK (h for help): ")
+          if OK == "h":
                println("OK 0 is used to encrypt messages.")
                println("OK 1 is used to decrypt messages.")
-          elif ok == "0":
+          elif OK == "0":
                String = input("Neutron > String: ")
-               println(encrypt(String))
+               println(Encrypt(String))
      else:
           println("Error: Invalid Neutron SK. Type h for help.")
           init()
