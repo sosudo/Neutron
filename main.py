@@ -1,3 +1,2 @@
-def encrypt(x):
-     pass
-print(encrypt(2)) 
+from icecream import ic as println
+println.configureOutput(prefix='Neutron ', includeContext=False)
