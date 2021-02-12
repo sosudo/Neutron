@@ -7,9 +7,11 @@ println.configureOutput(prefix='Neutron > ', includeContext=False) # Setting up 
 def init():
      SK = input("Neutron > SK (h for help): ") # Neutron Start Key, determining what function Neutron leads to (0, 1, 2, h)
      if SK == "h":
-          println("SK 0 is used to access the email client")
-          println("SK 1 is used to access the password manager")
-          println("SK 2 is used to access the encryption machine")
+          println("SK 0 is used to access the email client.")
+          println("SK 1 is used to access the password manager.")
+          println("SK 2 is used to access the encryption machine.")
+          println("OK 0 for SK 2 is used to encrypt messages.")
+          println("OK 1 for SK 2 is used to decrypt messages previously encrypted by Neutron.")
           init()
      elif SK == "0":
           println(SK)
@@ -20,7 +22,7 @@ def init():
           OK = input("Neutron > OK (h for help): ")
           if OK == "h":
                println("OK 0 is used to encrypt messages.")
-               println("OK 1 is used to decrypt messages.")
+               println("OK 1 is used to decrypt messages previously encrypted by Neutron.")
           elif OK == "0":
                String = input("Neutron > String: ")
                println(Encrypt(String))
