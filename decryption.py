@@ -1,4 +1,3 @@
-# 71.@.71.52.71.$./.52.|2799149|&
 from alphanum import numalpha
 from circ import *
 def Decrypt(string:str) -> str:
