@@ -1,3 +1,4 @@
+from decryption import Decrypt
 from icecream import ic as println # Used for custom outputs
 import os
 import sys
@@ -23,6 +24,12 @@ def init():
           elif OK == "0":
                String = input("Neutron > String: ")
                println(Encrypt(String))
+          elif OK == "1":
+               String = input("Neutron > String: ")
+               println(Decrypt(String))
+          else:
+               println("Error: Invalid Neutron OK. Type h for help.")
+               init()
      else:
           println("Error: Invalid Neutron SK. Type h for help.")
           init()
