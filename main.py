@@ -1,14 +1,18 @@
+from icecream import ic as println
 from decryption import Decrypt
-from icecream import ic as println # Used for custom outputs
-import os
-import sys
-from encryption import *
-println.configureOutput(prefix='Neutron > ', includeContext=False) # Setting up custom outputs
+from encryption import Encrypt
+from retreive import Retreive
+from append import Append
+from generate import Generate
+println.configureOutput(prefix='Neutron > ', includeContext=False)
 def init():
-     SK = input("Neutron > SK (h for help): ") # Neutron Start Key, determining what function Neutron leads to (0, 1, 2, h)
+     SK = input("Neutron > SK (h for help): ")
      if SK == "h":
           println("SK 0 is used to access the email client.")
           println("SK 1 is used to access the password manager.")
+          println("OK 0 for SK 1 is used to append passwords to your personal password database.")
+          println("OK 1 for SK 1 is used to retreive passwords from your personal password database.")
+          println("OK 2 for SK 1 is used to generate passwords and append them to you personal password database.")
           println("SK 2 is used to access the encryption machine.")
           println("OK 0 for SK 2 is used to encrypt messages.")
           println("OK 1 for SK 2 is used to decrypt messages previously encrypted by Neutron.")
@@ -17,6 +21,17 @@ def init():
           println(SK)
      elif SK == "1":
           println(SK)
+          OK = input("Neutron > OK (h for help): ")
+          if OK == "0":
+               Site = input("Neutron > Site: ")
+               Password = input("Neutron > Password: ")
+               println(Append(Site, Password))
+          elif OK == "1":
+               Site = input("Neutron > Site: ")
+               println(Retreive(Site))
+          else:
+               println("Error: Invalid Neturon OK. Type h for help.")
+               init()
      elif SK == "2":
           println(SK)
           OK = input("Neutron > OK (h for help): ")
