@@ -3,7 +3,8 @@ from decryption import Decrypt
 from encryption import Encrypt
 from retreive import Retreive
 from append import Append
-from generate import Generate
+from secure_lock import Generate
+from _all import All
 println.configureOutput(prefix='Neutron > ', includeContext=False)
 def init():
      SK = input("Neutron > SK (h for help): ")
@@ -13,6 +14,7 @@ def init():
           println("OK 0 for SK 1 is used to append passwords to your personal password database.")
           println("OK 1 for SK 1 is used to retreive passwords from your personal password database.")
           println("OK 2 for SK 1 is used to generate passwords and append them to you personal password database.")
+          println("OK 3 for SK 1 is used to retreive all your passwords from your personal password database.")
           println("SK 2 is used to access the encryption machine.")
           println("OK 0 for SK 2 is used to encrypt messages.")
           println("OK 1 for SK 2 is used to decrypt messages previously encrypted by Neutron.")
@@ -29,6 +31,12 @@ def init():
           elif OK == "1":
                Site = input("Neutron > Site: ")
                println(Retreive(Site))
+          elif OK == "2":
+               Name = input("Neutron > Name: ")
+               Length = int(input("Neutron > Length: "))
+               println(Generate(Name, Length))
+          elif OK == "3":
+               println(All())
           else:
                println("Error: Invalid Neturon OK. Type h for help.")
                init()
